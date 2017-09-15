@@ -1,11 +1,15 @@
 var mysql = require('mysql');
 
-module.exports = function() {
+function createDBConnection(){
     return mysql.createConnection({
-    host : 'localhost',
+               host : 'strawberry.arvixe.com',
     user : 'node_testes',
     password : 'nodetestes',
-    database : 'casadocodigo_nodejs',
-    
-});
+    database : 'node_testes_bd',
+          });
+
+}
+
+module.exports = function(){
+    return createDBConnection;
 }
