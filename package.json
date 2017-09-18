@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
+    "run-tests": "node_modules/mocha/bin/mocha",
     "cp-bulma": "cat node_modules/bulma/css/bulma.css > public/css/bulma.css"
   },
   "author": "",
@@ -17,6 +18,15 @@
     "eslint": "^4.6.1",
     "express": "^4.15.4",
     "express-load": "^1.1.16",
-    "mysql": "^2.14.1"
+    "express-validator": "^4.1.1",
+    "mysql": "^2.14.1",
+    "pdf2json": "^1.1.7"
+  },
+  "devDependencies": {
+    "inflight": "^1.0.6",
+    "mocha": "^3.5.3",
+    "once": "^1.4.0",
+    "supertest": "^3.0.0",
+    "wrappy": "^1.0.2"
   }
 }
