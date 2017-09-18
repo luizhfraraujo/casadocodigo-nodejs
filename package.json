@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "run-tests": "node_modules/mocha/bin/mocha",
+    "test": "node node_modules\\mocha\\bin\\mocha",
+    "start": "set NODE_ENV=development& nodemon app.js",
     "cp-bulma": "cat node_modules/bulma/css/bulma.css > public/css/bulma.css"
   },
   "author": "",
