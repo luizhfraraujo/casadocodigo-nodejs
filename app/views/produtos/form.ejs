@@ -1,20 +1,15 @@
 <html>
-    <head>
-            <link rel="stylesheet" href="/css/bulma.css">
-    </head>
     <body>
-            <% if(errosValidacao){ %>
-                <%for(var i=0;i<errosValidacao.length;i++) { %>
-                <div class="notification is-danger">
-                        <button class="delete"></button>
-                        
-                            <%= errosValidacao[i].param %> - <%= errosValidacao[i].msg %>   
-                </div>
-                <%}%>
-            <%}%>
-        
+        <div class='erros'>
+             <%if(errosValidacao){%>
+                <ul>
+                    <%for(var i=0;i<errosValidacao.length;i++){%>
+                        <li><%=errosValidacao[i].param%> - <%=errosValidacao[i].msg%></li>
+                    <%}%>
+                </ul>
+             <%}%>
+        </div>
         <form action="/produtos" method="post">
-
             <div>
                 <label for="titulo">Titulo</label>
                 <input type="text" id="titulo" name="titulo" value="<%=produto.titulo%>" placeholder="coloque o titulo"/>
