@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node node_modules\\mocha\\bin\\mocha",
-    "start": "set NODE_ENV=development& nodemon app.js",
+    "start": "nodemon app.js",
     "cp-bulma": "cat node_modules/bulma/css/bulma.css > public/css/bulma.css"
   },
   "author": "",
@@ -19,7 +19,8 @@
     "express-load": "^1.1.16",
     "express-validator": "^4.1.1",
     "mysql": "^2.14.1",
-    "pdf2json": "^1.1.7"
+    "pdf2json": "^1.1.7",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "inflight": "^1.0.6",

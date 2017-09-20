@@ -13,7 +13,7 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(expressValidator());
 
-    app.use(express.static('public'))
+    app.use(express.static('./app/public'));
     load('routes', {cwd: 'app'})
         .then('infra')
         .into(app);

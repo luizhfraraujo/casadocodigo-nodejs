@@ -1,0 +1,52 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Hello Bulma!</title>
+            
+            <link href="/css/bulma.css"
+            rel="stylesheet" type="text/css" media="all"/>
+        
+          
+    </head>
+
+    <body>
+        <section class="section">
+                <div class="container">
+                        <h1 class="title">
+                                Mensagens!
+                              </h1>
+                <ul id="messages"></ul>
+                </div>
+
+        </section>
+            <section class="section">
+                    <div class="container">
+    <form action="">
+            <div class="field">
+            <label class="label">Mensagem</label>
+            <div class="control">
+              <input id="m" autocomplete="on" class="input" type="text" placeholder="Digite sua mensagem">
+            </div>
+          </div>
+    </form>
+</div></section>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  $(function () {
+    var socket = io();
+    $('form').submit(function(){
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+
+  });
+</script>
+    </body>
+
+</html>
